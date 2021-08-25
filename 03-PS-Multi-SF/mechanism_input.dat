@@ -1,0 +1,65 @@
+#####################################################
+# Zacros Mechanism Input File                                                        
+# Jinghan Li, Ilaris Maresi, Joel Ager
+# Modifying program to simulate electrochemistry
+#####################################################
+
+mechanism
+
+############################################################################
+
+step OH_adsorption           # step means irreversible.  There is also
+  gas_reacs_prods  OH -1     #   reversible_step
+  sites 1
+  initial
+    1 *     1                # empty site
+  final
+    1 OH*   1                # absorbed OH
+#                             alpha3      alpha4 for T_offset of 10
+   pre_expon  0.0     0.0    197.32072222966056       -19.34086992242324       0.0        0.0       0.0
+#    pre_expon 0.0    # to turn off reaction
+  activ_eng  0.0             # Will be zero for all EC steps
+
+end_step
+
+############################################################################
+
+step OH_desorption
+  gas_reacs_prods  OH 1
+  sites 1
+  initial
+    1 OH*     1
+  final
+    1 *    1	
+#                   For k0 = 1e4, alpha = -0.5	
+#                                 alpha3      alpha4 for T_offset of 10
+   pre_expon  0.0       0.0       -202.61903959620858       19.34086992242324       0.0        0.0       0.0
+#  pre_expon 0.0    # to turn off reaction
+  activ_eng  0.0
+
+end_step
+
+############################################################################
+
+step CO_oxidation
+  gas_reacs_prods  CO2 1
+  sites 2
+  neighboring 1-2           # for a bimolecular process
+  initial
+    1 CO*  1
+    2 OH*   1
+  final
+    1 *    1
+    2 *    1
+ #           For k0 = 0.8324 FAST case, alpha = +0.5
+ #                                alpha3      alpha4 for T_offset of 10
+  pre_expon  0.0       0.0       193.60301239387874     -19.34086992242324       0.0        0.0       0.0
+# pre_expon 0.0    # to turn off reaction
+  activ_eng  0.0
+
+end_step
+
+end_mechanism
+
+
+

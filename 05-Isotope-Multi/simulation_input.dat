@@ -1,0 +1,30 @@
+
+temperature	9.1		     		# -0.5 V vs. RHE
+pressure	1.0                 
+
+n_gas_species             6
+gas_specs_names           CCH4	ECH4	EEH4	CCH6O	ECH6O	EEH6O
+gas_energies              0.0 	0.0		0.0		0.0		0.0		0.0
+gas_molec_weights         28.06	28.06	28.06	46.07	46.07	46.07
+gas_molar_fracs           0.0	0.0		0.0		0.0		0.0		0.0    
+
+n_surf_species            6
+surf_specs_names          CO*	EO*	OCCO**	OECO**	OEEO** 	H*
+surf_specs_dent           1		1	2		2		2		1
+
+snapshots                 on time 0.1        	# write the lattice occupancy every 5 seconds into history_output.txt
+process_statistics        on time 0.1        	# Has number of times (cumulative) that events have happened
+species_numbers           on time 0.1      		# time, temperature, number of bound species, number of gas species
+
+event_report              off                  	# if this is on get a huge file
+
+max_steps                 infinity
+max_time                  0.5               	# run simulation for indicated number of seconds
+wall_time                 7200                	# abort simulation after 2 hours
+
+no_restart                                    	# will not write a restart.inf file
+
+enable_stiffness_scaling
+stiffness_scale_all
+
+finish

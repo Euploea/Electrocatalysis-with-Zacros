@@ -1,0 +1,18 @@
+#####################################################
+# Zacros Mechanism Input File                                                        
+#  Ilaris Maresi  May 2018
+#   Modifying program to simulate electrochemistry
+#####################################################
+
+initial_state 
+   seed_multiple CO*        9900 # 9900 is 99% coverage 
+   end_seed_multiple
+  
+
+
+# Can put on specific sites here
+
+
+end_initial_state 
+
+  

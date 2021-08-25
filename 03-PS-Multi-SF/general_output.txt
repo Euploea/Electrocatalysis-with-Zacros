@@ -1,0 +1,146 @@
++---------------------------------------------------+
+|  ZACROS 2.0                                       |
+|  GRAPH-THEORETICAL KMC SIMULATION CODE            |
+|                                                   |
+|  Multiscale Computational Catalysis and           |
+|  Materials Science Research Group                 |
+|                                                   |
+|  Michail Stamatakis, Ph.D.                        |
+|  Chemical Engineering Department                  |
+|  University College London                        |
++---------------------------------------------------+
+
+Threading information:
+~~~~~~~~~~~~~~~~~~~~~~
+     NO THREADS
+
+Simulation setup:
+~~~~~~~~~~~~~~~~~
+
+    Temperature: 10.275000000000000
+
+    Pressure: 1.0000000000000000
+
+    Number of gas species: 2
+
+    Gas species names: OH CO2 
+
+    Gas species energies: 0.0000000000000000 -2.3370000000000002 
+
+    Gas species molecular weights: 17.000800000000002 44.009599999999999 
+
+    Gas species molar fractions: 1.0000000000000000 0.0000000000000000 
+
+    Number of surface species: 2
+
+    Surface species names: CO* OH* 
+
+    Surface species dentation:  1  1
+
+    Snapshots will be reported in file history_output.txt every 5.0000000000000003E-002 time units
+
+    Process statistics will be reported in file procstat_output.txt every 5.0000000000000003E-002 time units
+
+    Species numbers will be reported in file specnum_output.txt every 5.0000000000000003E-002 time units
+
+    Event reporting turned off
+
+    Maximum number of steps: 9223372036854775807 (maximum allowed value)
+
+    Max simulated time: 3.0000000000000000              
+
+    Allowed walltime in seconds: 3600
+
+    Keyword no_restart parsed. You will not be able to resume the simulation at a later time.
+
+    No seed was specified for the random number generator; using value 82609
+
+Finished reading simulation input.
+
+Lattice setup:
+~~~~~~~~~~~~~~
+
+    Using one of the default lattice structures.
+
+    Unit cell area: 1.0000000000000000
+
+    Lattice cell: 100 x 100
+
+    Surface area: 10000.000000000000
+
+    Number of lattice sites: 10000
+
+    Number of site types: 1
+
+    Site type names not defined, automatic strings assigned.
+    Site type names and number of sites of that type:
+      StTp1 (10000)
+
+    Maximum coordination number: 4
+
+    Lattice structure written to lattice_output.txt
+
+Finished reading lattice input.
+
+Energetics setup:
+~~~~~~~~~~~~~~~~~
+
+    Number of clusters: 2
+
+    Maximum number of sites involved in a cluster: 1
+
+    Clusters:
+
+        1. CO_point:  Mult = 1      ECI = -1.3000000000000000       Entities:  CO*
+        2. OH_point:  Mult = 1      ECI = -1.3500000000000001       Entities:  OH*
+
+Finished reading energetics input.
+
+Mechanism setup:
+~~~~~~~~~~~~~~~~
+
+    Number of elementary steps: 3
+
+    Maximum number of sites involved in a step: 2
+
+    Reaction network:
+
+        1. OH_adsorption:    A(Tini) =  4.0825E+00   Ea =  0.00    k(Tini) =  4.0825E+00  Reaction: OH  +  *(.)  ->  OH*(.)
+        2. OH_desorption:    A(Tini) =  4.8989E+01   Ea =  0.00    k(Tini) =  4.8989E+01  Reaction: OH*(.)  ->  OH  +  *(.)
+        3. CO_oxidation:     A(Tini) =  1.6808E+02   Ea =  0.00    k(Tini) =  1.6808E+02  Reaction: CO*(.)  +  OH*(.)  ->  CO2  +  *(.)  +  *(.)
+Finished reading mechanism input.
+
+Initial state setup:
+~~~~~~~~~~~~~~~~~~~~
+
+1 "multiple" seeding instructions for:
+
+  9900 adparticles of species CO*
+  
+
+Finished reading initial state input.
+
+Commencing simulation:
+~~~~~~~~~~~~~~~~~~~~~~
+
+Simulation stopped:
+~~~~~~~~~~~~~~~~~~~
+ Current KMC time: 3.00000215
+ Events occurred:  100658
+ Event frequency:  33552.6445
+
+Performance facts:
+~~~~~~~~~~~~~~~~~~
+
+Elapsed CPU time:         1.26562500 seconds
+Elapsed clock time:       1.35936701 seconds
+Setup clock time:         9.92373005E-02 seconds
+Simulation clock time:    1.26012969 seconds
+
+Clock time per KMC event: 1.35048085E-05 seconds
+Clock time per KMC time:  0.453122020 seconds/KMCTimeUnits
+
+Events per clock hour:    266571712
+KMC Dt per clock hour:    7944.87988 KMCTimeUnits
+
+> Normal termination <

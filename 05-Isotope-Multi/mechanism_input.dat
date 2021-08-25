@@ -1,0 +1,357 @@
+mechanism
+############################################################################
+step COads                     # R1-1 CO* adsorption
+
+  sites 1
+  initial
+    1 *		1
+  final
+    1 CO*   1
+	
+variant A
+    site_types A
+	pre_expon  2.4789E-03
+    activ_eng  0.0
+end_variant
+
+variant B
+    site_types B 
+	pre_expon  2.7544E-04
+    activ_eng  0.0
+end_variant
+
+end_step
+############################################################################
+step EOads                     # R1-2 EO* adsorption
+
+  sites 1
+  initial
+    1 *		1
+  final
+    1 EO*   1
+	
+variant A
+    site_types A
+	pre_expon  2.7544E-04
+    activ_eng  0.0
+end_variant
+
+variant B
+    site_types B 
+	pre_expon  2.4789E-03
+    activ_eng  0.0
+end_variant
+
+end_step
+############################################################################ 
+reversible_step CO_CO_coupling		# R2-1
+  
+  sites 2
+  neighboring 1-2
+  initial
+    1 CO*	1
+    2 CO*	1
+  final
+    1 OCCO**	1
+    1 OCCO**	2
+    
+pre_expon	0.0     0.0	55.04036964051082	-6.664863833505382	0.0	0.0	0.0
+pe_ratio	0.0     0.0	-63.60825355668166	8.386201271642292	0.0	0.0	0.0
+  activ_eng    0.0
+end_reversible_step
+############################################################################
+reversible_step EO_CO_coupling		# R2-2
+  
+  sites 2
+  neighboring 1-2
+  initial
+    1 CO*	1
+    2 EO*	1
+  final
+    1 OECO**	1
+    1 OECO**	2
+    
+pre_expon	0.0     0.0	55.04036964051082	-6.664863833505382	0.0	0.0	0.0
+pe_ratio	0.0     0.0	-63.60825355668166	8.386201271642292	0.0	0.0	0.0
+  activ_eng    0.0
+  
+end_reversible_step
+############################################################################ 
+reversible_step EO_EO_coupling		# R2-3
+  
+  sites 2
+  neighboring 1-2
+  initial
+    1 EO*	1
+    2 EO*	1
+  final
+    1 OEEO**	1
+    1 OEEO**	2
+    
+pre_expon	0.0     0.0	55.04036964051082	-6.664863833505382	0.0	0.0	0.0
+pe_ratio	0.0     0.0	-63.60825355668166	8.386201271642292	0.0	0.0	0.0
+  activ_eng    0.0
+  
+end_reversible_step
+############################################################################
+step CCH4                     # R3-1-1 for ethylene
+  gas_reacs_prods  CCH4 1
+  sites 2
+  neighboring 1-2
+  initial
+    1 OCCO**	1
+    1 OCCO**	2
+  final
+    1 *   	1
+    2 *   	1
+	
+variant A-C2H4
+    site_types A A
+	pre_expon  0.0	0.0	53.8693344650847	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant B-C2H4
+    site_types B B
+	pre_expon  0.0	0.0	51.6721098877485	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant AB-C2H4
+    site_types A B
+	pre_expon  0.0	0.0	52.2598965526506 	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+end_step
+############################################################################
+step ECH4                     # R3-1-2 for ethylene
+  gas_reacs_prods  ECH4 1
+  sites 2
+  neighboring 1-2
+  initial
+    1 OECO**	1
+    1 OECO**	2
+
+  final
+    1 *   	1
+    2 *   	1
+           
+variant A-C2H4
+    site_types A A
+	pre_expon  0.0	0.0	53.8693344650847	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant B-C2H4
+    site_types B B
+	pre_expon  0.0	0.0	51.6721098877485	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant AB-C2H4
+    site_types A B
+	pre_expon  0.0	0.0	52.2598965526506 	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+end_step
+############################################################################
+step EEH4                     # R3-1-3 for ethylene
+  gas_reacs_prods  EEH4 1
+  sites 2
+  neighboring 1-2
+  initial
+    1 OEEO**	1
+    1 OEEO**	2
+
+  final
+    1 *   	1
+    2 *   	1
+           
+variant A-C2H4
+    site_types A A
+	pre_expon  0.0	0.0	53.8693344650847	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant B-C2H4
+    site_types B B
+	pre_expon  0.0	0.0	51.6721098877485	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant AB-C2H4
+    site_types A B
+	pre_expon  0.0	0.0	52.2598965526506 	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+end_step
+############################################################################
+step CCH6O                     # R3-2-1 for ethanol
+  gas_reacs_prods  CCH6O 1
+  sites 2
+  neighboring 1-2
+  initial
+    1 OCCO**	1
+    1 OCCO**	2
+
+  final
+    1 *   	1
+    2 *   	1
+
+variant A-C2H6O
+    site_types A A
+	pre_expon  0.0	0.0	51.6721098877485	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant B-C2H6O
+    site_types B B
+	pre_expon  0.0	0.0 53.8693344650847	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant AB-C2H6O
+    site_types A B
+	pre_expon  0.0	0.0	52.2598965526506 	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant            
+
+end_step
+############################################################################
+step ECH6O                     # R3-2-2 for ethanol
+  gas_reacs_prods  ECH6O 1
+  sites 2
+  neighboring 1-2
+  initial
+    1 OECO**	1
+    1 OECO**	2
+
+  final
+    1 *   	1
+    2 *   	1
+            
+variant A-C2H6O
+    site_types A A
+	pre_expon  0.0	0.0	51.6721098877485	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant B-C2H6O
+    site_types B B
+	pre_expon  0.0	0.0 53.8693344650847	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant AB-C2H6O
+    site_types A B
+	pre_expon  0.0	0.0	52.2598965526506 	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant 
+
+end_step
+############################################################################
+step EEH6O                     # R3-2-3 for ethanol
+  gas_reacs_prods  EEH6O 1
+  sites 2
+  neighboring 1-2
+  initial
+    1 OEEO**	1
+    1 OEEO**	2
+
+  final
+    1 *   	1
+    2 *   	1
+            
+variant A-C2H6O
+    site_types A A
+	pre_expon  0.0	0.0	51.6721098877485	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant B-C2H6O
+    site_types B B
+	pre_expon  0.0	0.0	53.8693344650847	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant
+
+variant AB-C2H6O
+    site_types A B
+	pre_expon  0.0	0.0	52.2598965526506 	-6.44824608848141	0.0	0.0	0.0
+    activ_eng  0.0
+end_variant  
+
+end_step
+ 
+############################################################################
+ reversible_step CO_diffusion
+ sites 2
+ neighboring 1-2
+ initial
+   1 CO*   1
+   2 *    1
+ final
+   1 *    1
+   2 CO*   1
+	
+  variant A
+   site_types A A
+   pre_expon  150000.0
+   pe_ratio   1.0000000000000000e+000
+   activ_eng  0.0
+ end_variant
+
+ variant B
+   site_types B B
+   pre_expon  150000.0
+   pe_ratio   1.0000000000000000e+000
+   activ_eng  0.0
+ end_variant
+
+ variant AB
+   site_types A B
+   pre_expon  200000.0
+   pe_ratio   1.0000000000000000e+000
+   activ_eng  0.0
+ end_variant
+
+ end_reversible_step	
+
+############################################################################
+ reversible_step EO_diffusion
+ sites 2
+ neighboring 1-2
+ initial
+   1 EO*   1
+   2 *    1
+ final
+   1 *    1
+   2 EO*   1
+	
+  variant A
+   site_types A A
+   pre_expon  150000.0
+   pe_ratio   1.0000000000000000e+000
+   activ_eng  0.0
+ end_variant
+
+ variant B
+   site_types B B
+   pre_expon  150000.0
+   pe_ratio   1.0000000000000000e+000
+   activ_eng  0.0
+ end_variant
+
+ variant AB
+   site_types A B
+   pre_expon  200000.0
+   pe_ratio   1.0000000000000000e+000
+   activ_eng  0.0
+ end_variant
+
+ end_reversible_step	
+############################################################################
+
+end_mechanism

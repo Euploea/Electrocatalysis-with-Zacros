@@ -1,0 +1,11 @@
+#####################################################
+# Zacros Lattice Input File                                                        
+#  Ilaris Maresi, May 2018
+#   Modifying program to simulate electrochemistry
+#####################################################
+
+lattice default_choice
+
+rectangular_periodic  1.0 100 100   # very simple square lattice here
+
+end_lattice
